@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2017539 박보민</title>
+    <style>
+        * {font-family: "나눔스퀘어";}
+        header h1 {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #FFFF7E;
+            text-align: center;
+        }
+        header h2 {
+            font-family: 'Times New Roman', Times, serif; 
+            text-align: center;
+            color: darkgrey;
+        }
+        nav ul {
+            text-align: center;
+            border-bottom: 5px solid #D1B2FF; padding: 15px 10px;
+            letter-spacing: 5px;
+        }
+        nav ul a:hover {
+            background-color:#D4F4FA;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bomin's Web</h1>
+        <h2>Introduction</h2>
+            <nav>
+                <ul>
+                    <a href="#Profile">Profile</a>
+                    <a href="#Study">Study</a>
+                </ul>
+            </nav>
+    </header>
+    <section>
+        <h3>Bomin's Profile</h3>
+        <div id = "Profile">
+            <img src="./images/bomin.jpg" alt="Bomin" width="300"> <br>
+                이름 : 박보민 <br>
+                생년월일 : 2001.03.16 <br>
+                키 : 166cm <br>
+                혈액형 : A형 <br>
+                MBTI : ISFJ <br>
+                학교 : <a href="https://mis.donga.ac.kr/sites/mis/index.do" target="_blank">동아대학교 경영정보학과</a><br>
+                좋아하는 가수 : <a href="#highlight">하이라이트</a><br>
+                좋아하는 색 : 분홍색, 파랑색 <br>
+                싫어하는 것 : 벌레 <br>
+                취미 : 노래듣기, 스포츠 경기관람   
+        </div>
+        <h3>요즘 듣는 노래</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/h_jAPjbdILM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h3>응원하는 팀 : 롯데자이언츠</h3>
+            <img src="./images/lotte.jpg" alt="lotte">
+        <hr>
+        <div id="highlight">
+            <h5>가수 하이라이트</h5>
+            <img src="./images/highlight.jpg" alt="highlight" width="400">
+        </div>
+        <hr>
+        <div id="Study">
+            <h3>Bomin's Study</h3>
+            <table border="1">
+                <tr>
+                    <th>과목명</th>
+                    <th>수강</th>
+                </tr>
+                <tr>
+                    <td>웹프로그래밍</td>
+                    <td>수강중</td>
+                </tr>
+                <tr>
+                    <td>프로그래밍 기초</td>
+                    <td>수강완료</td>
+                </tr>
+                <tr>
+                    <td>프로그래밍 언어</td>
+                    <td>수강완료</td>
+                </tr>
+                <tr>
+                    <td>웹 기획 및 디자인</td>
+                    <td>미수강</td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <hr color = "red">
+        <h3><i>방명록</i></h3>
+        <div id="guest">
+            <form action="#" method="POST">
+                이름 : <input type="text" name="name"> <br>
+                소감 : <input type="text" name="feeling">
+                <input type="submit" value="완료">
+            </form>
+        </div>
+    </section>
+    <hr>
+    <footer>&copy;Bomin</footer>
+</body>
+</html>
