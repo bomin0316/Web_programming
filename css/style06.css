@@ -1,0 +1,54 @@
+*{font-family: 나눔스퀘어, Arial, Helvetica, sans-serif;}
+body{width: 980px; margin: 0 auto;}
+header h1 {
+    height: 50px;
+    text-align: center;
+    margin-top: 50px;
+    font-size: xx-large;
+    color: pink;
+    text-shadow: 2px 2px darkgray;
+}
+nav{
+    text-align: center;
+    letter-spacing: 5px;
+    padding: 1px 5px;
+    background-color: lightpink;
+}
+nav li{
+    display: inline;
+    list-style: none;
+    padding: 15px 20px;
+    font-size: large;
+    color: #4C4C4C;
+}
+nav li a:hover{color: #ffffff;}
+ul{list-style-type: none;}
+a{text-decoration: none;}
+section{display: flex;}
+article{
+    width: 80%;
+    border-right: 2px solid pink;
+}
+aside{
+    width: 20%;
+    margin-left: 10px;
+}
+h3{color: #04AA6D;}
+i{
+    line-height: 180% ;
+    font-size: medium;
+}
+p{text-decoration:underline 5px solid lightpink;}
+th {
+    background-color: #04AA6D;
+    color: white;
+}
+#Likes{
+    align-content: center;
+    margin-right: 20px;
+} 
+footer {
+    background-color:lightgray;
+    border-top: 10px;
+    font-size: 1em;   
+}
