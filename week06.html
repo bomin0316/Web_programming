@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2017539 박보민</title>
+    <link rel="stylesheet" href="./css/w3.css">
+    <link rel="stylesheet" href="./style06.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="w3-wide"><b>Bomin's Web</b></h1>
+        <h6 class="w3-center w3-text-gray">Welcome :)</h6>
+        <img src="./images/tulip.png" width="50px" alt="">
+        
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Profile">Profile</a></li>
+            <li><a href="#Likes">Likes</a></li>
+            <li><a href="#Contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="w3-container w3-margin-top w3-margin-bottom">
+        <article>
+            <div class="w3-row" id="About">
+                <img class="w3-col s5" src="./images/bomin.jpg" alt="bomin" width="300px"> <br>
+                        <i class="w3-col s6 w3-margin">
+                            이름 : 박보민 <br>
+                            생년월일 : 2001.03.16 <br>
+                            키 : 166cm <br>
+                            취미 : 노래듣기, 스포츠 경기관람<br>
+                            MBTI : ISFJ <br>
+                            학적사항 : 현재 <a href="https://mis.donga.ac.kr/sites/mis/index.do" target="_blank">동아대학교 경영정보학과</a> 2학년 재학중
+                        </i>
+                        <h6 class="w3-row w3-right w3-margin"><a href="https://blog.naver.com/qhalsl2001/222431594691" target="_blank"><i>더 알아보기</i></a></h6>
+            </div>
+            <br>
+            <div id="Profile">
+                <h3> My Programming </h3>
+                <table class="w3-table-all w3-hoverable">
+                    <tr>
+                        <th>과목명</th>
+                        <th>수강</th>
+                        <th>취득학점</th>
+                    </tr>
+                    <tr>
+                        <td>웹프로그래밍</td>
+                        <td>수강중</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>프로그래밍 기초</td>
+                        <td>수강완료</td>
+                        <td>4.5</td>
+                    </tr>
+                    <tr>
+                        <td>프로그래밍 언어</td>
+                        <td>수강완료</td>
+                        <td>4.5</td>
+                    </tr>
+                    <tr>
+                        <td>웹 기획 및 디자인</td>
+                        <td>미수강</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <div class="w3-row" id="Likes">
+                <h3>My favorite Singer</h3>
+                <img src="./images/highlight.jpg" alt="highlight" width="400"><br>
+                <audio src="./media/하이라이트 (Highlight)-01-얼굴 찌푸리지 말아요-CAN YOU FEEL IT_-128.mp3" controls=""></audio>
+                <br>
+                <h3>재미있게 본 프로그램</h3>
+                <img class="w3-col s5 w3-margin" src="./images/tving.jpg" alt="환승연애">
+                <img class="w3-col s5 w3-margin" src="./images/drama.jpg" alt="갯마을차차차">
+                <h3 class="w3-row">요즘 들겨듣는 노래</h3>
+                <iframe class="w3-col s12" width="560" height="315" src="https://www.youtube.com/embed/h_jAPjbdILM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
+            </div>
+            <br>
+        </article>
+    
+        <aside class = "right">
+            <div id="login">
+                <p class="w3-xlarge w3-center">로그인</p>
+                <form action="#" method="POST">
+                    아이디 : <input type="text" name="id" class="w3-border w3-round-large"> <br>
+                    비밀번호 : <input type="text" name="password" class="w3-border w3-round-large">
+                    <input type="submit" value="로그인" class="w3-margin-top w3-round-large">
+                </form>
+            </div>
+            <p class="w3-xlarge w3-center">자유게시판</p>
+            <li><a href="#">게시글1</a></li>
+            <li><a href="#">게시글2</a></li>
+            <li><a href="#">게시글3</a></li>
+            <li><a href="#">게시글4</a></li>
+
+            <p class="w3-xlarge w3-center">사진첩</p>
+            <li><a href="#">사진1</a></li>
+            <li><a href="#">사진2</a></li>
+            <li><a href="#">사진3</a></li>
+            <li><a href="#">사진4</a></li>
+
+            <p class="w3-xlarge w3-center">방명록</p>
+            <div id="guest">
+                <form action="#" method="POST">
+                    이름 : <input type="text" name="name" class="w3-input"> <br>
+                    소감 : <input type="text" name="feeling" class="w3-input">
+                    <input type="submit" value="완료" class="w3-margin-top w3-round-large">
+                </form>
+            </div>
+        </aside>
+    </section>
+
+    <footer> 
+        <div id="Contact" class="w3-large">&copy;Bomin
+           <div class="w3-row">
+               <div class="w3-col s4 w3-container">
+                <h5> Contact Us </h5>
+                <ul>
+                    <li>Phone : 010-8393-****</li>
+                    <li>Email : <a href="mailto:qhalsl2001@naver.com" title="Email Us">qhalsl2001@naver.com</a></li>
+                </ul>
+               </div>
+               <div class="w3-col s4 w3-container">
+                   <h5> Follow Us </h5>
+                   <a href="https://www.instagram.com/bomin_0316"><i class="fa fa-instagram" style="font-size: 30px;"></i></a>
+                   <a href="#"><i class="fa fa-facebook-square" style="font-size: 30px;"></i></a>
+                   <a href="https://blog.naver.com/qhalsl2001"><i class="fa fa-home" style="font-size: 30px;"></i></a>
+                   
+               </div>
+           </div>
+        </div> 
+    </footer>
+</body>
+
+</html>
