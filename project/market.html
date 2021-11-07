@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/w3.css">
+    <link rel="stylesheet" href="./css/indexStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>상품 등록</title>
+    <script>
+    let data = [["./images/book1.jpg", "달러구트 꿈 백화점","이미예","팩토리나인", 12400],
+                [ "./images/book2.jpg", "트렌드 코리아 2022","김난도","미래의창", 16200],
+                [ "./images/book5.jpg", "꽃을 보듯 너를 본다","나태주","지혜", 9000],
+                [ "./images/book6.jpg", "주식투자 무작정 따라하기","윤재수","길벗", 12600]]
+    function tablePrint(){
+    let text = '';
+    text = `<table class="w3-table-all w3-hoverable"><tr><th>책표지</th><th>제목</th><th>저자</th><th>출판사</th><th>가격</th></tr>`;
+    for (let i =0; i < data.length; i++){
+        text += `<tr><td><img src=${data[i][0]}></td><td>${data[i][1]}</td><td>${data[i][2]}</td><td>${data[i][3]}</td><td>${data[i][4]}</td></tr>`;
+    }
+    text += `</table>`;
+    document.getElementById("productList").innerHTML=text;
+    }
+    function fileUpload(){
+        let a = new Array();
+        let file = "./images/" + document.getElementById("file").files[0].name;
+        let title = document.getElementById("title").value;
+        let author = document.getElementById("author").value;
+        let publisher = document.getElementById("publisher").value;
+        let price = parseInt(document.getElementById("price").value);
+        a[0] = file;
+        a[1] = title;
+        a[2] = author;
+        a[3] = publisher;
+        a[4] = price;
+        data.push(a);
+        alert("도서가 업로드 되었습니다. 도서목록을 클릭하여 확인하세요.")
+    }
+    function w3_open(){
+               document.getElementById("mySidebar").style.display = "block";
+    }
+    function w3_close(){
+        document.getElementById("mySidebar").style.display = "none";
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Book Store</h1>
+        <h2>가을은 독서의 계절입니다</h2>
+        <img src="./images/leaf.png" width="50px" class="w3-right" alt="">
+        <img src="./images/book.png" width="50px" class="w3-right" alt="">
+        <div>
+            네이버에 검색하기
+            <form method="get" action="http://search.naver.com/search.naver" target="_blank">
+                <input name="query">
+                <input type="submit" value="검색">
+            </form>
+            </div>
+    </header>
+
+    <nav>
+        <ul>
+            <div class="w3-dropdown-click">
+                <div class="w3-dropdown-content w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+                    <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+                    <a href="./index.html" class="w3-bar-item w3-button">Home</a>
+                    <a href="#" class="w3-bar-item w3-button">베스트셀러</a>
+                    <a href="#" class="w3-bar-item w3-button">신간도서</a>
+                    <a href="#" class="w3-bar-item w3-button">E-book</a>
+                    <a href="#" class="w3-bar-item w3-button">이벤트</a>
+                </div>
+            </div>
+            <button class="w3-button w3-xlarge" onclick="w3_open()">☰</button>
+            <li><a href="./index.html">베스트셀러</a></li>
+            <li><a href="#New">신간도서</a></li>
+            <li><a href="#Market">중고장터</a></li>
+            <li><a href="#Event">이벤트</a></li>
+        </ul>
+    </nav>
+    <section>
+        <article>
+            <p class="w3-xlarge w3-center"> 도서 등록</p>
+            <div>
+                책 제목 : <input class="w3-input" type="text" name="" id="title"> <br>
+                저자명 : <input class="w3-input" type="text" name="" id="author"> <br>
+                출판사 : <input class="w3-input" type="text" name="" id="publisher"> <br>
+                가격 : <input class="w3-input" type="text" name="" id="price"> <br>
+                책 표지 : <input class="w3-input" type="file" name="" id="file"> <br>
+                <button class= "w3-button w3-orange w3-margin-bottom" onclick="fileUpload();"> 도서등록</button>
+                <button class= "w3-button w3-orange w3-margin-bottom" onclick="tablePrint();"> 도서목록</button>
+        </div>
+        <div>
+            <div id="productList" class="w3-large">
+                
+            </div>
+            </table>
+        </div>
+        </article>
+
+        <aside class = "right">
+            <div>
+                <p class="w3-xlarge w3-center">바로가기</p>
+                <a href="http://www.kyobobook.co.kr/index.laf" target="_blank">교보문고</a> <br>
+                <a href="http://www.yes24.com/Main/default.aspx" target="_blank">예스24</a> <br>
+                <a href="http://book.interpark.com/bookPark/html/book.html" target="_blank">인터파크</a>
+            </div>
+            
+        </aside>
+    </section>
+    <footer> 
+        <div id="Contact" class="w3-large w3-margin-top">&copy;Bomin
+           <div class="w3-row">
+               <div class="w3-col s4 w3-container">
+                <h5> Contact Us </h5>
+                <ul>
+                    <li>Phone : 010-8393-****</li>
+                    <li>Email : <a href="mailto:qhalsl2001@naver.com" title="Email Us">qhalsl2001@naver.com</a></li>
+                    <li>Address : 부산시 서구 부민동2가</li>
+                </ul>
+               </div>
+               <div class="w3-col s4 w3-container">
+                   <h5> Follow Us </h5>
+                   <a href="#"><i class="fa fa-instagram" style="font-size: 30px;"></i></a>
+                   <a href="#"><i class="fa fa-facebook-square" style="font-size: 30px;"></i></a>
+                   <a href="#"><i class="fa fa-home" style="font-size: 30px;"></i></a>
+                   
+               </div>
+           </div>
+        </div> 
+    </footer>
+</body>
+</html>
