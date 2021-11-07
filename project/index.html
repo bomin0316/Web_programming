@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/w3.css">
+    <link rel="stylesheet" href="./css/indexStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Book Store</title>
+    <script>
+        function login(){
+            let id = document.getElementById("id").value;
+            let pw = document.getElementById("pw").value;
+            if(id==="admin"){
+                if(pw=="1234"){
+                    document.getElementById("login").innerHTML="<h3>" + id + 
+                        "님이 로그인하였습니다 </h3>" + 
+                        "<p>마이페이지 </p>" + 
+                        "<a> 보유 포인트 : 500p </a><br>" +
+                        "<a href='#'> 장바구니 </a><br>" +
+                        "<a href='#'> 최근 본 도서 </a><br>" +
+                        "<a href='#'> 찜한 도서 </a><br>";
+                } else {
+                    alert("비밀번호를 확인하세요");
+                }
+            }else{
+                alert("회원가입을 하세요");
+            }
+        }
+        function cancel() {
+            alert("취소합니다.")
+        }
+        function w3_open(){
+            document.getElementById("mySidebar").style.display = "block";
+        }
+        function w3_close(){
+            document.getElementById("mySidebar").style.display = "none";
+        }
+        let data = [[ "./images/book4.jpg", "소크라테스 익스프레스","에릭 와이너","어크로스", 15000],
+            ["./images/book5.jpg", "꽃을 보듯 너를 본다","나태주","지혜", 9000],
+            [ "./images/book2.jpg", "트렌드 코리아 2022","김난도","미래의창", 16200],
+            [ "./images/book6.jpg", "주식투자 무작정 따라하기","윤재수","길벗", 12600]]
+        function tablePrint(){
+        
+        let text = '';
+        text = `<table class="w3-table-all w3-hoverable"><tr><th>책표지</th><th>제목</th><th>저자</th><th>출판사</th><th>가격</th></tr>`;
+        for (let i =0; i < data.length; i++){
+            text += `<tr><td><img src=${data[i][0]}></td><td>${data[i][1]}</td><td>${data[i][2]}</td><td>${data[i][3]}</td><td>${data[i][4]}</td></tr>`;
+        }
+        text += `</table>`;
+        document.getElementById("productList").innerHTML=text;
+        }
+    </script>
+</head>
+
+<body onload = "tablePrint();">
+    <header>
+            <h1>Book Store</h1>
+            <h2>가을은 독서의 계절입니다</h2>
+            <img src="./images/leaf.png" width="50px" class="w3-right" alt="">
+            <img src="./images/book.png" width="50px" class="w3-right" alt="">
+            <div>
+                네이버에 검색하기
+                <form method="get" action="http://search.naver.com/search.naver" target="_blank">
+                    <input name="query">
+                    <input type="submit" value="검색">
+                </form>
+                </div>
+    </header>
+
+    <nav>
+        <ul>
+            <div class="w3-dropdown-click">
+                <div class="w3-dropdown-content w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+                    <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+                    <a href="#" class="w3-bar-item w3-button">베스트셀러</a>
+                    <a href="#" class="w3-bar-item w3-button">신간도서</a>
+                    <a href="#" class="w3-bar-item w3-button">E-book</a>
+                    <a href="#" class="w3-bar-item w3-button">이벤트</a>
+                </div>
+            </div>
+            
+            <button class="w3-button w3-xlarge" onclick="w3_open()">☰</button>
+            <li><a href="#Best">베스트셀러</a></li>
+            <li><a href="#New">신간도서</a></li>
+            <li><a href="#eBook">E-book</a></li>
+            <li><a href="#Event">이벤트</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <article>
+        <h2 class="w3-center" id="Best" style="color: #9d5c0d;"><b>Best Seller</b></h2>
+        <div class="best">
+            <img src="images/book1.jpg"> 
+            <p>달러구트 꿈 백화점<br>
+                \12,400
+            </p>
+        </div>
+        <div class="best">
+            <img src="images/book2.jpg"> 
+            <p>트렌드 코리아 2022<br>
+                \16,200
+            </p>    
+        </div>   
+        <div class="best">
+            <img src="images/book3.jpg"> 
+            <p>인생은 실전이다<br>
+                \16,600
+            </p>
+        </div>
+
+        <div>
+            <h3>도서 목록</h3>
+            <div id="productList" class="w3-large w3-center">
+                
+            </div>
+            </table>
+        </div>
+ 
+        
+    </article>
+
+      <aside class = "right">
+        <div id="login">
+            <p class="w3-xlarge w3-center">로그인</p>
+                아이디 : <input type="text" name="" id = "id" class="w3-border w3-round-large"> <br>
+                비밀번호 : <input type="password" name="" id = "pw" class="w3-border w3-round-large">
+                <button onclick="login();" class="w3-round-large w3-margin-top">로그인</button>
+                <button onclick="cancel();" class="w3-round-large w3-margin-top">취소</button>
+        </div>
+
+        <div>
+            <p class="w3-xlarge w3-center">바로가기</p>
+            <a href="http://www.kyobobook.co.kr/index.laf" target="_blank">교보문고</a> <br>
+            <a href="http://www.yes24.com/Main/default.aspx" target="_blank">예스24</a> <br>
+            <a href="http://book.interpark.com/bookPark/html/book.html" target="_blank">인터파크</a>
+        </div>
+        <div>
+            <p class="w3-xlarge w3-center">중고장터</p>
+            <button onclick="location.href='market.html'">중고장터에 도서 등록</button>
+        </div>
+        
+    </aside>
+    </section>
+    <footer> 
+        <div id="Contact" class="w3-large w3-margin-top">&copy;Bomin
+           <div class="w3-row">
+               <div class="w3-col s4 w3-container">
+                <h5> Contact Us </h5>
+                <ul>
+                    <li>Phone : 010-8393-****</li>
+                    <li>Email : <a href="mailto:qhalsl2001@naver.com" title="Email Us">qhalsl2001@naver.com</a></li>
+                    <li>Address : 부산시 서구 부민동2가</li>
+                </ul>
+               </div>
+               <div class="w3-col s4 w3-container">
+                   <h5> Follow Us </h5>
+                   <a href="#"><i class="fa fa-instagram" style="font-size: 30px;"></i></a>
+                   <a href="#"><i class="fa fa-facebook-square" style="font-size: 30px;"></i></a>
+                   <a href="#"><i class="fa fa-home" style="font-size: 30px;"></i></a>
+                   
+               </div>
+           </div>
+        </div> 
+    </footer>
+</body>
+
+</html>
