@@ -17,7 +17,7 @@
     let text = '';
     text = `<table class="w3-table-all w3-hoverable"><tr><th>책표지</th><th>제목</th><th>저자</th><th>출판사</th><th>가격</th></tr>`;
     for (let i =0; i < data.length; i++){
-        text += `<tr><td><img src=${data[i][0]}></td><td>${data[i][1]}</td><td>${data[i][2]}</td><td>${data[i][3]}</td><td>${data[i][4]}</td></tr>`;
+        text += `<tr><td><img src=${data[i][0]} onclick = "onClick(this)"></td><td>${data[i][1]}</td><td>${data[i][2]}</td><td>${data[i][3]}</td><td>${data[i][4]}</td></tr>`;
     }
     text += `</table>`;
     document.getElementById("productList").innerHTML=text;
@@ -42,6 +42,10 @@
     }
     function w3_close(){
         document.getElementById("mySidebar").style.display = "none";
+    }
+    function onClick(element){
+               document.getElementById('img01').src = element.src;
+               document.getElementById("modal01").style.display = "block";
     }
     </script>
 </head>
@@ -96,6 +100,11 @@
                 
             </div>
             </table>
+        </div>
+        <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+            <div class="w3-modal-content w3-animate-zoom">
+                <img id="img01" style="width: 100%">
+            </div>
         </div>
         </article>
 

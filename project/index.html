@@ -21,7 +21,7 @@
                         "<a> 보유 포인트 : 500p </a><br>" +
                         "<a href='#'> 장바구니 </a><br>" +
                         "<a href='#'> 최근 본 도서 </a><br>" +
-                        "<a href='#'> 찜한 도서 </a><br>";
+                        "<a href='#'> 찜한 도서 </a><br>"
                 } else {
                     alert("비밀번호를 확인하세요");
                 }
@@ -47,15 +47,23 @@
         let text = '';
         text = `<table class="w3-table-all w3-hoverable"><tr><th>책표지</th><th>제목</th><th>저자</th><th>출판사</th><th>가격</th></tr>`;
         for (let i =0; i < data.length; i++){
-            text += `<tr><td><img src=${data[i][0]}></td><td>${data[i][1]}</td><td>${data[i][2]}</td><td>${data[i][3]}</td><td>${data[i][4]}</td></tr>`;
+            text += `<tr><td><img src=${data[i][0]} onclick = "onClick(this)"></td><td>${data[i][1]}</td><td>${data[i][2]}</td><td>${data[i][3]}</td><td>${data[i][4]}</td></tr>`;
         }
         text += `</table>`;
         document.getElementById("productList").innerHTML=text;
         }
+        function onClick(element){
+               document.getElementById('img01').src = element.src;
+               document.getElementById("modal01").style.display = "block";
+        }
+        function popup(){
+            window.open("event.html","event 11월","width=500, height=600, scrollbars=yes");
+        }
+        
     </script>
 </head>
 
-<body onload = "tablePrint();">
+<body onload = "tablePrint(); popup()">
     <header>
             <h1>Book Store</h1>
             <h2>가을은 독서의 계절입니다</h2>
@@ -93,25 +101,26 @@
     <section>
         <article>
         <h2 class="w3-center" id="Best" style="color: #9d5c0d;"><b>Best Seller</b></h2>
-        <div class="best">
-            <img src="images/book1.jpg"> 
-            <p>달러구트 꿈 백화점<br>
+            <div class="best">
+                <img src="images/book1.jpg"> 
+                <p>달러구트 꿈 백화점<br>
                 \12,400
-            </p>
-        </div>
-        <div class="best">
-            <img src="images/book2.jpg"> 
-            <p>트렌드 코리아 2022<br>
+                </p>
+            </div>
+            <div class="best">
+                <img src="images/book2.jpg"> 
+                <p>트렌드 코리아 2022<br>
                 \16,200
-            </p>    
-        </div>   
-        <div class="best">
-            <img src="images/book3.jpg"> 
-            <p>인생은 실전이다<br>
-                \16,600
-            </p>
+                </p>
+            </div>   
+            <div class="best">
+                <img src="images/book3.jpg"> 
+                <p>인생은 실전이다<br>
+                    \16,600
+                </p>
+            </div>
         </div>
-
+        
         <div>
             <h3>도서 목록</h3>
             <div id="productList" class="w3-large w3-center">
@@ -119,8 +128,11 @@
             </div>
             </table>
         </div>
- 
-        
+        <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+            <div class="w3-modal-content w3-animate-zoom">
+              <img id="img01" style="width: 100%">
+            </div>
+        </div>
     </article>
 
       <aside class = "right">
