@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+    <link rel="stylesheet" href="./css/w3.css">
+    <link rel="stylesheet" href="./css//cartStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        function w3_open(){
+            document.getElementById("mySidebar").style.display = "block";
+        }
+        function w3_close(){
+            document.getElementById("mySidebar").style.display = "none";
+        }
+
+        function cartAppend(e){
+            const x = document.getElementById(e);
+            const ele = document.getElementById("cart");
+            if(confirm("장바구니에 담으시겠습니까?")==true){
+                ele.appendChild(x);  
+            }else{
+                return false;
+            }
+        }
+
+        function cartRemove(e){
+            const x = document.getElementById(e);
+            const cart = document.getElementById("cart");
+            const list = document.getElementById("productList");
+            if(confirm("장바구니에서 삭제하시겠습니까?")==true){
+                cart.removeChild(x);
+                list.appendChild(x);
+            }else{
+                return false;
+            }  
+        }
+
+    </script>
+</head>
+<body onload=tablePrint();>
+    <header>
+        <h1>Book Store</h1>
+        <h2>가을은 독서의 계절입니다</h2>
+        <img src="./images/leaf.png" width="50px" class="w3-right" alt="">
+        <img src="./images/book.png" width="50px" class="w3-right" alt="">
+        <div>
+            네이버에 검색하기
+            <form method="get" action="http://search.naver.com/search.naver" target="_blank">
+                <input name="query">
+                <input type="submit" value="검색">
+            </form>
+            </div>
+    </header>
+
+    <nav>
+        <ul>
+            <div class="w3-dropdown-click">
+                <div class="w3-dropdown-content w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+                    <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+                    <a href="./index.html" class="w3-bar-item w3-button">Home</a>
+                    <a href="#" class="w3-bar-item w3-button">베스트셀러</a>
+                    <a href="#" class="w3-bar-item w3-button">신간도서</a>
+                    <a href="#" class="w3-bar-item w3-button">E-book</a>
+                    <a href="#" class="w3-bar-item w3-button">이벤트</a>
+                    <a href="./center.html" class="w3-bar-item w3-button">고객센터</a>
+                </div>
+            </div>
+            <button class="w3-button w3-xlarge" onclick="w3_open()">☰</button>
+            <li><a href="./index.html">베스트셀러</a></li>
+            <li><a href="#New">신간도서</a></li>
+            <li><a href="#eBook">E-book</a></li>
+            <li><a href="#Event">이벤트</a></li>
+            <li><a href="./center.html">고객센터</a></li>
+        </ul>
+    </nav>
+    
+    <section>
+        <article>
+            <h2 class="w3-center" style="color: #9d5c0d;"><b>나의 장바구니</b></h2>
+            <div> 
+               <table id="cart">
+                   <tr>
+                       <td></td>
+                       <td></td>
+                       <td></td>
+                       <td></td>
+                       <td></td>
+                       <td></td>
+                   </tr>
+               </table>
+            </div>
+        <hr>
+        <h3>도서 목록</h3>
+        <table id="productList" class="w3-table-all" style="width: 100%;">
+            <tr>
+                <th>책표지</th>
+                <th>제목</th>
+                <th>저자</th>
+                <th>출판사</th>
+                <th>가격</th>
+                <th>장바구니</th>
+            </tr>
+            <tr id="book1">
+                <td> <img src="./images/book1.jpg" alt=""> </td>
+                <td>달러구트 꿈 백화점</td>
+                <td>이미예</td>
+                <td>팩토리나인</td>
+                <td>\12400</td>
+                <td><button onclick="cartAppend('book1');">추가</button><button onclick="cartRemove('book1');">삭제</button></td>
+            </tr>
+            <tr id="book2">
+                <td> <img src="./images/book2.jpg" alt=""> </td>
+                <td>트렌드코리아 2022</td>
+                <td>김난도</td>
+                <td>미래의창</td>
+                <td>\16200</td>
+                <td><button onclick="cartAppend('book2');">추가</button><button onclick="cartRemove('book2');">삭제</button></td>
+            </tr>
+            <tr id="book3">
+                <td> <img src="./images/book3.jpg" alt=""> </td>
+                <td>인생은 실전이다</td>
+                <td>주언규</td>
+                <td>상상스퀘어</td>
+                <td>\16600</td>
+                <td><button onclick="cartAppend('book3');">추가</button><button onclick="cartRemove('book3');">삭제</button></td>
+            </tr>
+            <tr id="book4">
+                <td> <img src="./images/book4.jpg" alt=""> </td>
+                <td>소크라테스 익스프레스</td>
+                <td>에릭 와이너</td>
+                <td>어크로스</td>
+                <td>\15000</td>
+                <td><button onclick="cartAppend('book4');">추가</button><button onclick="cartRemove('book4');">삭제</button></td>
+            </tr>
+            <tr id="book5">
+                <td> <img src="./images/book5.jpg" alt=""> </td>
+                <td>꽃을 보듯 너를 본다</td>
+                <td>나태주</td>
+                <td>지혜</td>
+                <td>\9000</td>
+                <td><button onclick="cartAppend('book5');">추가</button><button onclick="cartRemove('book5');">삭제</button></td>
+            </tr>
+            <tr id="book6">
+                <td> <img src="./images/book6.jpg" alt=""> </td>
+                <td>주식투자 무작정 따라하기</td>
+                <td>윤재수</td>
+                <td>길벗</td>
+                <td>\12600</td>
+                <td><button onclick="cartAppend('book6');">추가</button><button onclick="cartRemove('book6');">삭제</button></td>
+            </tr>
+            <tr id="book7">
+                <td> <img src="./images/book7.jpg" alt=""> </td>
+                <td>Do it! HTML+CSS+자바스크립트 웹 표준의 정석</td>
+                <td>고경희</td>
+                <td>이지스퍼블리싱</td>
+                <td>\27000</td>
+                <td><button onclick="cartAppend('book7');">추가</button><button onclick="cartRemove('book7');">삭제</button></td>
+            </tr>
+            <tr id="book8">
+                <td> <img src="./images/book8.jpg" alt=""> </td>
+                <td>해커스 토익 기출 보카 TOEIC VOCA(개정판 5판)</td>
+                <td>David Cho</td>
+                <td>해커스어학연구소</td>
+                <td>\11600</td>
+                <td><button onclick="cartAppend('book8');">추가</button><button onclick="cartRemove('book8');">삭제</button></td>
+            </tr>
+            
+        </table>
+        
+    </article>
+    </section>
+
+    <footer> 
+        <div id="Contact" class="w3-large w3-margin-top">&copy;Bomin
+           <div class="w3-row">
+               <div class="w3-col s4 w3-container">
+                <h5> Contact Us </h5>
+                <ul>
+                    <li>Phone : 010-8393-****</li>
+                    <li>Email : <a href="mailto:qhalsl2001@naver.com" title="Email Us">qhalsl2001@naver.com</a></li>
+                    <li>Address : 부산시 서구 부민동2가</li>
+                </ul>
+               </div>
+               <div class="w3-col s4 w3-container">
+                   <h5> Follow Us </h5>
+                   <a href="#"><i class="fa fa-instagram" style="font-size: 30px;"></i></a>
+                   <a href="#"><i class="fa fa-facebook-square" style="font-size: 30px;"></i></a>
+                   <a href="#"><i class="fa fa-home" style="font-size: 30px;"></i></a>
+                   
+               </div>
+           </div>
+        </div> 
+    </footer>
+</body>
+</html>

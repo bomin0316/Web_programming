@@ -19,9 +19,9 @@
                         "님이 로그인하였습니다 </h3>" + 
                         "<p>마이페이지 </p>" + 
                         "<a> 보유 포인트 : 500p </a><br>" +
-                        "<a href='#'> 장바구니 </a><br>" +
+                        "<a href='cart.html' target='_blank'> 장바구니 </a><br>" +
                         "<a href='#'> 최근 본 도서 </a><br>" +
-                        "<a href='#'> 찜한 도서 </a><br>"
+                        "<a href='#'> 찜한 도서 </a><br>";
                 } else {
                     alert("비밀번호를 확인하세요");
                 }
@@ -65,7 +65,8 @@
 
 <body onload = "tablePrint(); popup()">
     <header>
-            <h1>Book Store</h1>
+        <iframe width="0" height="0" src="https://www.youtube.com/embed/KefKOFGy5I0?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+        <h1>Book Store</h1>
             <h2>가을은 독서의 계절입니다</h2>
             <img src="./images/leaf.png" width="50px" class="w3-right" alt="">
             <img src="./images/book.png" width="50px" class="w3-right" alt="">
@@ -95,6 +96,7 @@
             <li><a href="#New">신간도서</a></li>
             <li><a href="#eBook">E-book</a></li>
             <li><a href="#Event">이벤트</a></li>
+            <li><a href="center.html">고객센터</a></li>
         </ul>
     </nav>
 
@@ -104,13 +106,13 @@
             <div class="best">
                 <img src="images/book1.jpg"> 
                 <p>달러구트 꿈 백화점<br>
-                \12,400
+                    \12,400
                 </p>
             </div>
             <div class="best">
                 <img src="images/book2.jpg"> 
                 <p>트렌드 코리아 2022<br>
-                \16,200
+                    \16,200
                 </p>
             </div>   
             <div class="best">
@@ -135,7 +137,7 @@
         </div>
     </article>
 
-      <aside class = "right">
+        <aside class = "right">
         <div id="login">
             <p class="w3-xlarge w3-center">로그인</p>
                 아이디 : <input type="text" name="" id = "id" class="w3-border w3-round-large"> <br>
