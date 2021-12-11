@@ -15,7 +15,9 @@
         function w3_close(){
             document.getElementById("mySidebar").style.display = "none";
         }
-
+        function popup(){
+            window.open("event.html","event 11월","width=500, height=600, scrollbars=yes");
+        }
         function cartAppend(e){
             const x = document.getElementById(e);
             const ele = document.getElementById("cart");
@@ -72,7 +74,7 @@
             <li><a href="./index.html">베스트셀러</a></li>
             <li><a href="#New">신간도서</a></li>
             <li><a href="#eBook">E-book</a></li>
-            <li><a href="#Event">이벤트</a></li>
+            <li><a href="#Event" onclick="popup()">이벤트</a></li>
             <li><a href="./center.html">고객센터</a></li>
         </ul>
     </nav>

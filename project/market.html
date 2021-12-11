@@ -47,6 +47,9 @@
                document.getElementById('img01').src = element.src;
                document.getElementById("modal01").style.display = "block";
     }
+    function popup(){
+            window.open("event.html","event 11월","width=500, height=600, scrollbars=yes");
+    }
     </script>
 </head>
 <body>
@@ -81,7 +84,7 @@
             <li><a href="./index.html">베스트셀러</a></li>
             <li><a href="#New">신간도서</a></li>
             <li><a href="#eBook">E-book</a></li>
-            <li><a href="#Event">이벤트</a></li>
+            <li><a href="#Event" onclick="popup()">이벤트</a></li>
             <li><a href="./center.html">고객센터</a></li>
         </ul>
     </nav>
